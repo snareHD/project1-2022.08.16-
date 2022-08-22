@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+int a=0;
+while((a=getchar())!==EOF)   //EOF--end of file
+{
+putchar(a);
+}
+  return 0;
+  }
+  
+  
+  输入EOF仍能打印EOF，因为这三个字符分别被打印，在后面输入ctrl+z即可结束该命令。
