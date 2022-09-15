@@ -1,0 +1,32 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//输入三个数，使每个数均按照由大到小的顺序输出。
+#include<stdio.h>
+int main()
+{
+	int a;
+	int b;
+	int c;
+	scanf("%d%d%d", &a, &b, &c);
+	if (a < b)
+	{
+		int i = a;
+		a = b;
+		b = i;
+
+	}
+	if (a < c)
+	{
+		int i = a;
+		a = c;
+		c = i;
+
+	}
+	if (b < c)
+	{
+		int i = b;
+		b = c;
+		c = i;
+	}
+	printf("%d %d %d",a,b,c);
+	return 0;
+}
