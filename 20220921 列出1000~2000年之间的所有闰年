@@ -1,0 +1,41 @@
+//列出1000~2000年之间的所有闰年
+//闰年:①能被4整除且不能被100整除;②能被400整除
+//方法一：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	for (int i = 1000; i <= 2000; i++)
+	{
+		if (i % 4 == 0 && i % 100 != 0)
+		{
+			printf("%d ", i);
+			a++;
+		}
+		else if (i % 400 == 0)
+		{
+			printf("%d ", i);
+			a++;
+		}
+	}
+	printf("\n%d\n", a);
+	return 0;
+}
+//方法二：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	for (int i = 1000; i <= 2000; i++)
+	{
+		if((i % 4 == 0 && i % 100 != 0)||(i % 400 == 0))
+		{
+			printf("%d ", i);
+			a++;
+    }
+  }   
+	printf("\n%d\n", a);
+	return 0;
+}
