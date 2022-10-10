@@ -1,5 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 //找出100-200之间的素数
+//都是试除法
+//方法一：
 #include<stdio.h>
 int main()
 {
@@ -21,6 +23,60 @@ int main()
 	      printf("%d ", i);
 		  count++;
 	     }		
+	}
+	printf("\ncount=%d\n", count);
+	return 0;
+}
+//方法二：
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int i;
+	int count = 0;
+	for (i = 100; i < 201; i++)
+	{
+		int a;
+		for (a = 2; a <= sqrt(i); a++)
+		{
+			if (i % a == 0)
+			{
+				break;
+			}
+
+		}
+		if (a > sqrt(i))
+		{
+			printf("%d ", i);
+			count++;
+		}
+	}
+	printf("\ncount=%d\n", count);
+	return 0;
+}
+//方法三：
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int i;
+	int count = 0;
+	for (i = 101; i < 201; i += 2)
+	{
+		int a;
+		for (a = 2; a <= sqrt(i); a++)
+		{
+			if (i % a == 0)
+			{
+				break;
+			}
+
+		}
+		if (a > sqrt(i))
+		{
+			printf("%d ", i);
+			count++;
+		}
 	}
 	printf("\ncount=%d\n", count);
 	return 0;
