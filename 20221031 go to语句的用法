@@ -1,0 +1,22 @@
+用法一：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	again://这个again后面是冒号
+	printf("hello world\n");
+	goto again;
+	return 0;
+}
+用法二：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	printf("hello world\n");
+	goto again;
+	printf("你好\n");
+again:
+	printf("嗨嗨嗨\n");
+	return 0;
+}
