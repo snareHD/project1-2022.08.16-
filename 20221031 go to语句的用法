@@ -20,3 +20,23 @@ again:
 	printf("嗨嗨嗨\n");
 	return 0;
 }
+用法三：
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int main()
+{
+	char z[20] = {0};
+	system("shutdown - s - t 60");//shutdown - s - t 60，60秒关机命令，system-执行系统命令的
+	scanf("%c", z);
+again:
+	printf("请注意，你的电脑将在1分钟内关机，如果输入:我是猪，就取消关机\n请输入>>");
+	if (strcmp(z,"我是猪")==0)//比较两个字符串用strcmp()
+	{
+		system("shutdown -a");
+	}
+	else
+	{
+		goto again;
+	}
+	return 0;
+}
