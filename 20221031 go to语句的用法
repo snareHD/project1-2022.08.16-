@@ -28,7 +28,7 @@ again:
 int main()
 {
 	char z[20] = { 0 };
-	system("shutdown /s /t 60");//shutdown - s - t 60，60秒关机命令，system-执行系统命令的
+	system("shutdown /s /t 60");//shutdown /s /t 60，60秒关机命令，system-执行系统命令的
 	
 
 again:
