@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<string.h>
+//strcpy和memset的用法有什么不同
+//strcpy-string copy 字符串拷贝  
+//memset-memory set 内存设置
+//1.strcpy的用法
+int main()
+{
+	char a[] = "bit";
+	char b[20] = "********";
+	strcpy(b, a);
+	printf("%s\n", b);
+	return 0;
+}
+//2.memset的用法
+int main()
+{
+
+	char b[20] = "********";
+	memset(b,'#', 3);
+	printf("%s\n", b);
+	return 0;
+}
