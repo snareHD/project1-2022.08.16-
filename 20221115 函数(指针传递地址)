@@ -1,0 +1,51 @@
+//函数(指针传递地址)
+//一、实例
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void  m1(int x, int y)
+{
+	int z = x;
+	x = y;
+	y = z;
+	
+}
+void m2(int* ba, int* pa)
+{
+	int tea = *ba;
+	*ba = *pa;
+	*pa = tea;
+}
+int main()
+{
+	int a = 10;
+	int b = 20;
+	//int tmp = 0;
+	printf("a=%d,b=%d\n", a, b);
+	/*tmp = a;
+	a = b;
+	b = tmp;*/
+	 //m1(a, b);m1函数不能传递地址失败，这里a,b的地址和x,y的地址不一样
+	m2(&a, &b);
+	printf("a=%d,b=%d\n", a, b);
+
+	return 0;
+}
+//二、个人练习
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+void tmp(int* pa,int* pb)
+{
+int z=*pa;
+*pa=*pb;
+*pb=z;
+}
+
+int main()
+{
+int a=10;
+int b=20;
+printf("a=%d,b=%d\n",a,b);
+tmp(&a,&b);
+printf("a=%d,b=%d\n",a,b);
+return 0;
+}
