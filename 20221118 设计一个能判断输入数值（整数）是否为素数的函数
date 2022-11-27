@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 //设计一个能判断输入数值（整数）是否为素数的函数
+//1.第一次写的错的
 #include<stdio.h>
 void data(int* i)
 {
@@ -22,5 +23,42 @@ int main()
 	int a;
 	scanf("%d", &a);
 	data(&a);
+	return 0;
+}
+//2.第二次写的经修改后正确的
+#define _CRT_SECURE_NO_WARNINGS 1
+//写一个函数判断这个数是否为素数
+#include<stdio.h>
+ int  sdt(int x)
+{
+	 for (int b=2; b > 1 && b < x;b++)
+	{
+		 
+			 if (x % b == 0)
+			 {
+				 return 0;//return 0比break要厉害，break在这里只能终止循环，而return 0可以终止函数
+
+			 }
+	
+			
+			 
+	}
+	 return 1;
+}
+int main()
+{
+	int a ;
+	scanf("%d", &a);
+	
+	sdt(a);
+	if (sdt(a) == 0)
+	{
+		printf("该数不是素数\n");
+	}
+	else if(sdt(a)==1)
+	{
+		printf("该数是素数\n");
+	}
+
 	return 0;
 }
