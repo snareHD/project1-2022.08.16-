@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//设计一个函数，使每次调用这个函数时num的值均加一
+#include<stdio.h>
+void add(int* p)
+{
+	(*p)++;
+}
+int main()
+{
+	int num = 0;
+	add(&num);
+	printf("num=%d\n", num);//1
+	add(&num);
+	printf("num=%d\n", num);//2
+	add(&num);
+	printf("num=%d\n", num);//3
+	return 0;
+}
