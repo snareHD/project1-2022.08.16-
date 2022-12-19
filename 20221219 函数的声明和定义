@@ -1,0 +1,39 @@
+在源文件中创建一个项目如test.c
+test.c中包含如下内容：
+     #define _CRT_SECURE_NO_WARNINGS 1
+     #define<stdio.h>
+     int main()
+     {
+       int a=10;
+       int b=20;
+       int sum=add(a,b);
+       printf("%d\n",sum);
+       return 0;
+     }
+之后在头文件中创建一个项目add.h,目的是进行函数的声明
+add.h中包含如下内容：
+      #define _CRT_SECURE_NO_WARNINGS 1
+      #ifndef __add_h__
+      #define __add_h__
+      int add(int x,int y);//函数的声明
+      #endif
+在源文件中创建项目add.c,目的是进行函数的定义
+add.c中包含如下内容:
+     #define _CRT_SECURE_NO_WARNINGS 1
+     int add(int x, int y)
+     {
+	     return x + y;
+     }
+之后在test.c项目中引用该函数，得到
+      #define _CRT_SECURE_NO_WARNINGS 1
+     #define<stdio.h>
+     #define"add.h"//个人创建的函数的引用要使用双引号(一般企业中的使用方法)
+     int main()
+     {
+       int a=10;
+       int b=20;
+       int sum=add(a,b);
+       printf("%d\n",sum);
+       return 0;
+     }
+
