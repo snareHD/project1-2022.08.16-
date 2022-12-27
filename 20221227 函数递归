@@ -1,3 +1,18 @@
+
+一：
+#define _CRT_SECURE_NO_WARNINGS 1
+//函数的递归
+#include<stdio.h>
+int main()
+
+{
+	printf("hehe\n");
+	main();    //打印hehe到一定数量后此函数会中断，原因是Stack overflow--栈溢出 //新版vs需要调试才能显示
+	return 0;
+}
+
+
+二：
 #define _CRT_SECURE_NO_WARNINGS 1
 //函数的递归
 //输入1234.输出1,2,3,4
