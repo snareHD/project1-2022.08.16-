@@ -1,0 +1,21 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+//函数的递归
+//输入1234.输出1,2,3,4
+#include<stdio.h>
+
+void print(int n)
+{
+	
+	if (n > 9)
+	{
+		print(n / 10);
+	}
+	printf("%d ", n % 10);
+}
+int main()
+{
+	unsigned int a=0;//unsigned int 为无符号位整型
+	scanf("%d", &a);//输入1234
+	print(a);
+	return 0;
+}
