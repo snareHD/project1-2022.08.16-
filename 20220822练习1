@@ -1,5 +1,5 @@
 #include<stdio.h>
-int main()
+int main()//主函数--程序的入口（有且仅有一个）
 {
 int a=0;
 while((a=getchar())!==EOF)   //EOF--end of file
