@@ -2,11 +2,11 @@
 #include<stdio.h>
 int main()
 {
-	int ch;
+	int ch;                     --getchar()用于读取字符，但类型确是int类型。因为EOF相当于-1,char类型不能读取-1，所以getchar()是int类型
 	char password[20] = { 0 };
 	printf("请输入密码》");
-	scanf("%s", password);
-	getchar();
+	scanf("%s", password);     --输入123456\n，储存到缓存器里面，调用123456,剩下\n('\n'==10,若后面不加getchar()读取'\n',ch=getchar()调用字符时，将调用剩余的这个'\n')
+	getchar();                 --读取上一步缓存器里面剩余的'\n'
 	printf("请输入Y/N》");
 	ch = getchar();
 	if (ch == 'Y')
