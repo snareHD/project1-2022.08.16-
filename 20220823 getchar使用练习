@@ -1,4 +1,5 @@
 #define  _CRT_SECURE_NO_WARNINGS 1
+①当password输入123456\n时
 #include<stdio.h>
 int main()
 {
@@ -19,3 +20,56 @@ int main()
 	}
 	return 0;
 }
+
+②当password输入123456 abcd\n时(中间有个空格)
+对照：
+#include<stdio.h>
+int main()
+{
+	int ch;                    
+	char password[20] = { 0 };
+	printf("请输入密码》");
+	scanf("%s", password);     --输入123456 abcd\n，储存到缓存器里面，调用123456,剩下空格abcd\n
+	getchar();                 --读取上一步缓存器里面剩余的空格
+	printf("请输入Y/N》");
+	ch = getchar();            --读取上一步缓存器里面剩余的abcd
+	if (ch == 'Y')
+	{
+		printf( "通过");
+	}
+	else
+	{
+		printf("密码错误");
+	}
+	return 0;
+}
+正确实例：
+#include<stdio.h>
+int main()
+{
+	int ch;  
+        int a;
+	char password[20] = { 0 };
+	printf("请输入密码》");
+	scanf("%s", password);     --输入123456 abcd\n，储存到缓存器里面，调用123456,剩下空格abcd\n
+	while(( a=getchar() )!='\n')               --读取上一步缓存器里面剩余部分直到'\n'
+        {
+          ;
+        }
+	printf("请输入Y/N》");
+	ch = getchar();          
+	if (ch == 'Y')
+	{
+		printf( "通过");
+	}
+	else
+	{
+		printf("密码错误");
+	}
+	return 0;
+}
+
+
+
+
+
