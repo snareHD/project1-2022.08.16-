@@ -1,19 +1,39 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+方法一：较为简便
 #include<stdio.h>
 int main()
 {
-	int i;
+	int i=0;
 	int n = 10;
 	int t = 1;
 	int b = 0;
-	for (i = 1; i >= 1 && i <= n; i++)
+	for (i = 1; i <= n; i++)
 	{
 		t = t * i;
-		b += t;
-		if (i == n)
+		b += t;		
+	}
+        printf("%d\n", b);	
+	return 0;
+}
+
+
+方法二：这个代码量大，没方法一简洁，较为繁琐
+#include<stdio.h>
+int main()
+{
+
+	int b = 0;
+	int i = 1;
+	int c = 0;
+	for (int b = 1; b <= 10; b++)
+	{
+                i=1;         //这里i被重新赋值为1(比较重要这个点)
+		for (int n = 1; n <= b; n++)
 		{
-			printf("%d\n", b);
+			i = i * n;
 		}
+		c = c + i;
+		printf("%d\n", c);
 	}
 	return 0;
 }
