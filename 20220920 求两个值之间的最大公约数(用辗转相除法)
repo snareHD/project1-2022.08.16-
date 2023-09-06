@@ -6,6 +6,7 @@ int main()
 {
 	int a = 24;
 	int b = 18;
+        int i = 0;
 	scanf("%d%d", &a, &b);
 	if (a < b)
 	{
@@ -16,14 +17,13 @@ int main()
 
 	while ((a % b) != 0)
 	{
-		int i = a % b;
+	        i = a % b;
 		a = b;
 		b = i;
 	}
 
-		if ((a % b) == 0)
-		{
-			printf("%d\n", b);
-		}
+		
+		printf("%d\n", b);
+	
 	return 0;
 }
