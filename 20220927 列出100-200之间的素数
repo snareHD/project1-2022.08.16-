@@ -28,6 +28,7 @@ int main()
 	return 0;
 }
 //方法二：
+①第一种写法--用的是sqrt函数
 #include<stdio.h>
 #include<math.h>
 int main()
@@ -37,7 +38,7 @@ int main()
 	for (i = 100; i < 201; i++)
 	{
 		int a;
-		for (a = 2; a <= sqrt(i); a++)
+		for (a = 2; a <= sqrt(i); a++)   --sqrt(开根号),头文件为math.h     这段代码用到的sqrt也可以换成pow(i,0.5)，pow就是power函数，power函数在c语言中写成pow
 		{
 			if (i % a == 0)
 			{
@@ -54,6 +55,36 @@ int main()
 	printf("\ncount=%d\n", count);
 	return 0;
 }
+①第②种写法--用的是pow函数
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int a = 0;
+	int c = 0;
+	for (a = 100; a < 201; a++)
+	{
+		int b = 2;
+		for ( b = 2; b <= pow(a,0.5); b++)
+		{
+			if (a % b == 0)
+			{
+				break;
+			}
+		}
+		if (b > pow(a, 0.5))
+		{
+			printf("%d ", a);
+			c++;
+		}
+		
+	}
+	printf("\n");
+	printf("100到200之间有%d个素数\n ", c);
+	return 0;
+}
+
+
 //方法三：
 #include<stdio.h>
 #include<math.h>
