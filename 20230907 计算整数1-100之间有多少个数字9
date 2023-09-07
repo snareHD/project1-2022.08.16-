@@ -1,0 +1,24 @@
+#define  _CRT_SECURE_NO_WARNINGS 1
+//整数1-100间有多少个数字9
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	int b = 0;
+	for (a = 1; a < 101; a++)
+	{
+		if ((a + 1) % 10 == 0)
+		{
+			printf("%d ", a);
+			b++;
+		}
+	    if (a / 10 == 9)        //这里必须用if，这样才能让两个if形成并列。如果用else if，会和前面的if形成分支语句，当a=99时，进入前面的if分支后，就不会在进入else if这个分支。
+		{
+			printf("%d ", a);
+			b++;
+		}
+
+	}
+	printf("\n%d\n", b);
+	return 0;
+}
