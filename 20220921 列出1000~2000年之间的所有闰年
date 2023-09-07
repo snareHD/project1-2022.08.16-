@@ -24,18 +24,27 @@ int main()
 }
 //方法二：
 #define _CRT_SECURE_NO_WARNINGS 1
+//打印1000年-2000年之间的闰年
+//普通闰年：能被4整除，不能被100整除
+//世纪闰年：能被400整除
 #include<stdio.h>
 int main()
 {
-	int a = 0;
-	for (int i = 1000; i <= 2000; i++)
+	int a = 0;//用来存储1000-2000年
+	int b = 0;
+	printf("1000年到2000年之间的闰年分别为\n");
+	for (a = 1000; a < 2001; a++)
 	{
-		if((i % 4 == 0 && i % 100 != 0)||(i % 400 == 0))
+		if (((a % 4 == 0 )&& (a % 100 != 0)) || (a % 400 == 0))
 		{
-			printf("%d ", i);
-			a++;
-    }
-  }   
-	printf("\n%d\n", a);
+			printf("%d ",a);
+			b++;
+			
+		}
+	}
+	printf("\n");
+	printf("总共%d个闰年\n ", b);
+	
+
 	return 0;
 }
