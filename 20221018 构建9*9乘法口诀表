@@ -1,15 +1,17 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-//构建9*9乘法口诀表
+//输出9*9乘法口诀表
 #include<stdio.h>
 int main()
 {
+	printf("9*9乘法口诀表\n");
 	for (int a = 1; a < 10; a++)
 	{
-		for (int b = 1; b < 10; b++)
+		for (int  b = 1; b <=a; b++)
 		{
 			int z = a * b;
-			printf("%d*%d=%d\n", a, b, z);
-		}
+			printf("%d*%d=%-2d  ", a,b,z);    //%2d指的是打印两位，若不够两位自动空格补齐，当然要是打印的数字多余两位也可以都打印出来
+		}                                         //%2d右对齐    %-2d左对齐
+		printf("\n");
 	}
 	return 0;
 }
