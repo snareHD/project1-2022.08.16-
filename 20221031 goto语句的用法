@@ -21,6 +21,7 @@ again:
 	return 0;
 }
 用法三：
+①用goto语句
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<stdlib.h>
@@ -44,5 +45,23 @@ again:
 	{
 		goto again;
 	}
+	return 0;
+}
+②用do while语句
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+	system("shutdown /s /t 60");
+	char arr[20] = { 0 };
+	do
+	{
+		printf("你的电脑将在60s后关机，请输入大家好来取消关机\n");
+		scanf("%s", arr);
+	} 
+	while (strcmp(arr, "大家好") != 0);
+	
+	system("shutdown /a");
 	return 0;
 }
