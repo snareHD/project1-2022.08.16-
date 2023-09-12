@@ -6,7 +6,7 @@ int main()
 	again://这个again后面是冒号
 	printf("hello world\n");
 	goto again;
-	return 0;
+	return 0; 
 }
 用法二：
 #define _CRT_SECURE_NO_WARNINGS 1
