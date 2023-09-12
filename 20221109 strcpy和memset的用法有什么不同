@@ -7,7 +7,7 @@
 //1.strcpy的用法
 int main()
 {
-	char a[] = "bit";
+	char a[] = "bit";           --包含'\0'这个元素
 	char b[20] = "********";
 	strcpy(b, a);
 	printf("%s\n", b);
