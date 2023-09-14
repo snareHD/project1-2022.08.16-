@@ -31,23 +31,23 @@ int main()
 #include<stdio.h>
  int  sdt(int x)
 {
-	 for (int b=2; b > 1 && b < x;b++)
+	 for (int b=2;  b < x;b++)
 	{
 		 
 			 if (x % b == 0)
 			 {
-				 return 0;//return 0比break要厉害，break在这里只能终止循环，而return 0可以终止函数
+				 return 0;//return 0比break要厉害，break在这里只能终止循环，而return 可以终止函数，并返回0
 
 			 }
 	
 			
 			 
 	}
-	 return 1;
+	 return 1;   //终止函数并返回1
 }
 int main()
 {
-	int a ;
+	int a =0;
 	scanf("%d", &a);
 	
 	sdt(a);
