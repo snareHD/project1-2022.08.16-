@@ -1,3 +1,25 @@
+①在一个源文件中写代码
+#define _CRT_SECURE_NO_WARNINGS 1
+
+int add(int x, int y);   //函数的声明
+
+#include<stdio.h>
+int main()
+{
+	int a = 10;
+	int b = 20;
+	int sum = add(a, b);   //函数的调用
+	return 0;
+}
+
+
+int add(int x, int y)    //函数的定义
+{
+	int z = x + y;
+	return z;
+}
+
+②在多个文件中写代码
 在源文件中创建一个项目如test.c
 test.c中包含如下内容：
      #define _CRT_SECURE_NO_WARNINGS 1
