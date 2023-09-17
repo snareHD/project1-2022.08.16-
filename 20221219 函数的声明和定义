@@ -34,8 +34,8 @@ test.c中包含如下内容：
      }
 之后在头文件中创建一个项目add.h,目的是进行函数的声明
 add.h中包含如下内容：
-      #define _CRT_SECURE_NO_WARNINGS 1
-      #ifndef __add_h__
+    
+      #ifndef __add_h__      
       #define __add_h__
       int add(int x,int y);//函数的声明
       #endif
@@ -44,7 +44,7 @@ add.c中包含如下内容:
      #define _CRT_SECURE_NO_WARNINGS 1
      int add(int x, int y)
      {
-	     return x + y;
+	     return (x + y);
      }
 之后在test.c项目中引用该函数，得到
       #define _CRT_SECURE_NO_WARNINGS 1
