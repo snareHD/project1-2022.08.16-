@@ -1,0 +1,41 @@
+//求第n个斐波那契数   1 1 2 3 5 8 13 21 34 55......前两个数相加等于后一个数
+
+//第一种方法：     --这种方法n数较小时计算较快，若n较大计算效率慢
+int fbn(int n)
+{
+	if (n <= 2)
+	{
+		return 1;
+	}
+	else
+	{
+		return fbn(n - 1) + fbn(n - 2);     //最终都转变成求fbn(1)和fbn(2)的相加
+	}
+}
+
+#include<stdio.h>
+int main()
+{
+	int n = 0;
+	scanf("%d", &n);
+	int f = fbn(n);
+	printf("%d\n", f);
+	return 0;
+}
+
+//第二种方法：      --改用while循环效率较高
+int fbn(int n)
+{
+	int a = 1;
+	int b = 1;
+	int c = 1;    //这里的c开始被赋值为1用的较为巧妙，当n<=2时，c==1
+	while (n > 2)
+	{
+		c = a + b;
+		a = b;
+		b = c;
+		n--;
+	}
+	return c;
+
+}
