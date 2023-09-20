@@ -1,6 +1,8 @@
 
 #define _CRT_SECURE_NO_WARNINGS 1
-//字符串strlen和sizeof的区别
+//字符串strlen和sizeof的区别:
+//strlen 字符串长度
+//sizeof 字节大小
 #include<stdio.h>
 #include<string.h>
 int main()
