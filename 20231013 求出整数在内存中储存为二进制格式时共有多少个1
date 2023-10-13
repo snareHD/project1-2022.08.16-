@@ -1,0 +1,41 @@
+//求出整数在内存中储存为二进制格式时共有多少个1？
+//①只适用于正整数
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	int count = 0;
+	while (a)
+	{
+		if ((a % 2) == 1)
+		{
+			count++;
+		}
+		a = a / 2;
+	}
+	printf("count=%d", count);
+	return 0;
+}
+
+
+//②既适用于正整数，也适用于负整数
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+
+	int count = 0;
+	for (int z = 0; z < 32; z++)
+	{
+		a = a >> z;
+		if ( ( a & 1) == 1 )
+		{
+			count++;
+		}
+	}
+
+	printf("count=%d", count);
+	return 0;
+}
