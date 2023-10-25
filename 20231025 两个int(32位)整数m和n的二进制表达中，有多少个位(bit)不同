@@ -1,0 +1,20 @@
+//两个int(32位)整数m和n的二进制表达中，有多少个位(bit)不同？
+#include<stdio.h>
+int main()
+{
+	int m = 0, n = 0;
+	scanf("%d%d", &m, &n);
+	int z = m ^ n;  //相同为0，不同为1
+	int count = 0;
+	for (int i = 0; i < 32; i++)
+	{
+		int v = z >> i;
+		int a = v & 1;
+		if (a == 1)
+		{
+			count++; 
+		}
+	}
+	printf("两个int整数m和n有%d个比特位不同", count);
+	return 0;
+}
