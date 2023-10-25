@@ -19,7 +19,7 @@ int main()
 }
 
 
-//②既适用于正整数，也适用于负整数
+//②既适用于正整数，也适用于负整数  --使用右移操作符
 #include<stdio.h>
 int main()
 {
@@ -36,6 +36,32 @@ int main()
 		}
 	}
 
+	printf("count=%d", count);
+	return 0;
+}
+
+//③既适用于正整数，也适用于负整数  --使用按位与&操作符
+#include<stdio.h>
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+
+	int count = 0;
+	//假如a=13
+	//1101   a
+	//1101   a-1
+	//1100   a=a&(a-1)
+	//1011   a-1
+	//1000   a=a&(a-1)
+	//0111   a-1
+	//0000   a=a&(a-1)
+
+	while (a)
+	{
+		a = a & (a - 1);           
+		count++;
+	}
 	printf("count=%d", count);
 	return 0;
 }
