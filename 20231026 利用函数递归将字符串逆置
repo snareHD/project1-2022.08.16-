@@ -1,0 +1,30 @@
+//利用函数递归将字符串逆置
+#define  _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+
+void  reserve_string(char* string,int end,int start)
+{
+	if (start>=end)
+	{
+		return ;
+	}
+	else
+	{
+		char z = string[start];
+		string[start] = string[end];
+		string[end] = z;
+	    reserve_string(string, end-1, start+1);
+	}
+	
+}
+
+
+int main()
+{
+	int a = 0;
+	char arr[] = "abcdef";
+	int i = sizeof(arr) / sizeof(arr[0]) - 2;  //5
+	reserve_string(arr,i,a);
+	printf("%s\n", arr);
+	return 0;
+}
